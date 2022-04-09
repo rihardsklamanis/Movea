@@ -1,3 +1,44 @@
+/* Fonts */
+/* Roboto 400 */
+    @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto-v29-latin-regular.eot'); 
+    src: local(''),
+        url('../fonts/roboto-v29-latin-regular.eot?#iefix') format('embedded-opentype'), 
+        url('../fonts/roboto-v29-latin-regular.woff2') format('woff2'), 
+        url('../fonts/roboto-v29-latin-regular.woff') format('woff'), 
+        url('../fonts/roboto-v29-latin-regular.ttf') format('truetype'), 
+        url('../fonts/roboto-v29-latin-regular.svg#Roboto') format('svg'); 
+}
+/* Roboto 500 */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/roboto-v29-latin-500.eot'); 
+    src: local(''),
+        url('../fonts/roboto-v29-latin-500.eot?#iefix') format('embedded-opentype'), 
+        url('../fonts/roboto-v29-latin-500.woff2') format('woff2'), 
+        url('../fonts/roboto-v29-latin-500.woff') format('woff'), 
+        url('../fonts/roboto-v29-latin-500.ttf') format('truetype'), 
+        url('../fonts/roboto-v29-latin-500.svg#Roboto') format('svg'); 
+}
+/* Roboto 700 */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/roboto-v29-latin-700.eot'); 
+    src: local(''),
+        url('../fonts/roboto-v29-latin-700.eot?#iefix') format('embedded-opentype'), 
+        url('../fonts/roboto-v29-latin-700.woff2') format('woff2'), 
+        url('../fonts/roboto-v29-latin-700.woff') format('woff'), 
+        url('../fonts/roboto-v29-latin-700.ttf') format('truetype'), 
+        url('../fonts/roboto-v29-latin-700.svg#Roboto') format('svg'); 
+}
+
 /* reset css */
 *,
 *::before,
@@ -51,6 +92,7 @@ input {
     cursor: pointer;
 }
 
+/* Grid */
 .header {
     grid-area: my-header;
 }
@@ -66,9 +108,9 @@ input {
 .grid {
     display: grid;
     grid-template-areas:
-    "my-header my-header"
-    "my-aside my-main"
-    "my-aside my-main";
+    "my-header my-header my-header"
+    "my-aside my-main my-main"
+    "my-aside my-main my-main";
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     gap: 8rem 0;
 }
@@ -79,6 +121,7 @@ input {
     padding: 3rem 2.4rem 4rem;
 }
 
+/* Header */
 .header__warp {
     display: flex;
     align-items: center;
@@ -86,6 +129,8 @@ input {
 
 .header__logo {
     font-size: 6.4rem;
+    font-weight: 700;
+    line-height: 117%;
     margin-right: 7rem;
 }
 
@@ -95,6 +140,8 @@ input {
 
 .header__nav a {
     font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 117%;
 }
 
 .header__nav a:not(:last-child) {
@@ -104,7 +151,7 @@ input {
 .header__find {
     width: 33rem;
     height: 4.1rem;
-    border-radius: 0.8rem;
+    border-radius: .8rem;
     margin-right: 3.9rem;
 }
 
@@ -115,10 +162,11 @@ input {
     background-repeat: no-repeat;
     background-size: 2rem;
     background-position: top 50% right 1.5rem;
-    border-radius: 0.8rem;
+    border-radius: .8rem;
     padding-left: 1rem;
     padding-right: 4rem;
     font-size: 2rem;
+    line-height: 115%;
     color: #FFFFFF;
 }
 
@@ -134,10 +182,12 @@ input {
 
 .header__hour {
     font-size: 2rem;
+    line-height: 115%;
 }
 
 .header__days {
     font-size: 1.2rem;
+    line-height: 117%;
 }
 
 .header__personal {
@@ -146,7 +196,254 @@ input {
     border-radius: 50%;
 }
 
-/* сетка */
+/* Main Trailer */
+.main-display__trailer {
+    position: relative;
+    width: 98.5%;
+    height: 20.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: url(../img/back-trailer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.6rem;
+    padding: 1.9rem 0 1.9rem 1.9rem;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1.6rem;
+    z-index: 0;
+}
+.main-display__views {
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 119%;
+    z-index: 2;
+}
+
+.main-display__name {
+    z-index: 2;
+}
+
+.main-display__header {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 150%;
+}
+
+.main-display__date {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 114%;
+}
+
+.button-play__wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.07);
+    width: 8.1rem;
+    height: 8.1rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.button-play {
+    width: 0;
+    height: 0;
+    border-top: 1.5rem solid transparent;
+    border-left: 2.5rem solid #FFFFFF;
+    border-bottom: 1.5rem solid transparent;
+    border-radius: .2rem;
+}
+
+/* Main Continue Watching */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    padding-right: 1rem;
+}
+
+.title__left, .title__right {
+    display: flex;
+    align-items: center;
+}
+
+.title__main {
+    font-size: 2rem;
+    line-height: 115%;
+}
+
+.title__count {
+    margin-left: 2rem;
+    color:rgba(255, 255, 255, 0.2);
+    font-size: 2rem;
+    line-height: 115%;
+    padding-top: .3rem;
+}
+
+.title__right span {
+    font-size: 1.4rem;
+    line-height: 114%;
+    color:rgba(255, 255, 255, 0.2);
+}
+
+.title__right img {
+    width: 2rem;
+    height: 1.6rem;
+    margin-left: 0.4rem;
+}
+
+.trending, .popular {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1.6rem;
+}
+
+.trending-item {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 47%;
+    height: 25.1rem;
+    border-radius: 1.6rem;
+    background: url(../img/trending-item-back.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.trending__plash {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 1.4rem;
+    line-height: 114%;
+    background:rgba(255, 255, 255, 0.3);
+    border-radius: 1.6rem;
+    padding: .4rem 1.3rem;
+    z-index: 2;
+}
+
+.trending_footer, .popular__footer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 1rem 1.8rem 6.4rem;
+    border-radius: 1.6rem;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 2;
+}
+
+.popular__footer {
+    background: rgba(255, 255, 255, 0.2);
+    padding: .8rem 1.9rem .8rem 6.4rem;
+}
+
+.trending__header {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 150%;
+}
+
+.trending_date {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 120%;
+}
+
+.trending__time {
+    padding: .4rem 1.3rem;
+    background: #FFFFFF;
+    border-radius: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 114%;
+    color: #000000;
+}
+
+.small {
+    width: 5rem;
+    height: 5rem;
+    left: 7%;
+}
+
+.small-plus {
+    width: 3rem;
+    height: 3rem;
+    left: 10%;
+}
+
+.button-play__wrap.small .button-play{
+    width: 0;
+    height: 0;
+    border-top: 1rem solid transparent;
+    border-left: 1.5rem solid #FFFFFF;
+    border-bottom: 1rem solid transparent;
+    border-radius: .2rem;
+}
+
+.button-play__wrap.small-plus .button-play{
+    width: 0;
+    height: 0;
+    border-top: 0.5rem solid transparent;
+    border-left: 1rem solid #FFFFFF;
+    border-bottom: 0.5rem solid transparent;
+    border-radius: .2rem;
+}
+
+.popular__item {
+    display: flex;
+    align-items: flex-end;
+    width: 30%;
+    height: 19.2rem;
+    border-radius: 1.6rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/popular-back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.popular__header {
+    font-size: 1rem;
+    line-height: 120%;
+}
+
+.popular__date {
+    font-weight: 700;
+    font-size: .8rem;
+    line-height: 113%;
+}
+
+.popular__rating {
+    display: flex;
+    align-items: center;
+}
+
+.popular__rating span {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 120%;
+    margin-left: .4rem;
+}
+
+/* Grid */
 @media (max-width: 108em) {
     html {
         font-size: 9px;
@@ -237,4 +534,4 @@ input {
     }
 }
 
-/* сетка */
+/* Grid */
